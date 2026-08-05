@@ -1,14 +1,8 @@
 {
     "goal_tokens": 1500.0,
     "target_price": 7.8,
-    "balance": 9295.0,
+    "balance": 9296.0,
     "history": [
-        {
-            "type": "withdraw",
-            "amount": 1.0,
-            "balance_after": 9295.0,
-            "timestamp": "2026-08-05T14:44:24"
-        },
         {
             "type": "deposit",
             "amount": 1980.0,
@@ -100,6 +94,10 @@
         {
             "price": 8.12,
             "timestamp": "2026-08-05T14:44:15"
+        },
+        {
+            "price": 8.12,
+            "timestamp": "2026-08-05T14:45:46"
         }
     ],
     "dca_entries": [],
