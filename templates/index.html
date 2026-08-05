@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0e17">
+<title>LINK Tracker</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔗</text></svg>">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="brand">
+      <span class="brand-icon">🔗</span>
+      <div>
+        <h1>LINK Tracker</h1>
+        <p class="subtitle">Objectif d'accumulation Chainlink</p>
+      </div>
+    </div>
+    <div class="live-status" id="live-status">
+      <span class="pulse-dot"></span>
+      <span id="last-update-label">Synchronisation…</span>
+    </div>
+  </header>
+
+  <!-- ===== GRID PRINCIPALE ===== -->
+  <div class="grid">
+
+    <!-- Prix -->
+    <section class="card card-price">
+      <div class="card-head">
+        <h2>Prix LINK</h2>
+        <span class="badge" id="change-badge">--</span>
+      </div>
+      <div class="price-row">
+        <div class="price" id="live-price">$--</div>
+        <canvas id="sparkline" width="140" height="48" class="sparkline"></canvas>
+      </div>
+    </section>
+
+    <!-- Capital -->
+    <section class="card card-balance">
+      <div class="card-head">
+        <h2>Capital</h2>
+      </div>
+      <div class="balance" id="balance">$--</div>
+
+      <div class="quick-chips" id="quick-chips-deposit">
+        <button type="button" class="chip" data-amount="50">+50</button>
+        <button type="button" class="chip" data-amount="100">+100</button>
+        <button type="button" class="chip" data-amount="500">+500</button>
+        <button type="button" class="chip" data-amount="1000">+1000</button>
+      </div>
+
+      <div class="input-row">
+        <input type="number" step="0.01" min="0.01" id="deposit-amount" placeholder="Montant à ajouter">
+        <button class="btn green-btn" id="btn-deposit">➕ Ajouter</button>
+      </div>
+
+      <div class="input-row">
+        <input type="number" step="0.01" min="0.01" id="withdraw-amount" placeholder="Montant à retirer">
+        <button class="btn red-btn" id="btn-withdraw">➖ Retirer</button>
+      </div>
+    </section>
+
+    <!-- Objectif -->
+    <section class="card card-goal">
+      <div class="card-head">
+        <h2>Objectif</h2>
+      </div>
+      <label for="goal-input">Objectif LINK (tokens)</label>
+      <input type="number" step="1" min="1" id="goal-input">
+
+      <label for="price-input">Prix moyen visé ($)</label>
+      <input type="number" step="0.01" min="0.01" id="price-input">
+
+      <div class="goal-preview">
+        Capital cible : <b id="goal-preview-value">$--</b>
+      </div>
+
+      <button class="btn blue-btn" id="btn-settings">💾 Enregistrer l'objectif</button>
+    </section>
+
+    <!-- Progression -->
+    <section class="card card-progress">
+      <div class="card-head">
+        <h2>Progression</h2>
+        <span class="badge badge-blue" id="progress-percent">--%</span>
+      </div>
+      <div class="progress">
+        <div class="fill" id="progress-fill" style="width:0%;"></div>
+      </div>
+      <div class="progress-legend">
+        <span><b id="capital-target">$--</b> objectif</span>
+        <span>Reste <b id="remaining-capital">$--</b></span>
+      </div>
+    </section>
+
+    <!-- Estimation -->
+    <section class="card card-estimation">
+      <div class="card-head">
+        <h2>Estimation</h2>
+      </div>
+      <p class="muted">Au prix actuel, tu peux acheter :</p>
+      <div class="token-amount" id="link-possible">-- LINK</div>
+      <p class="muted">Il reste à accumuler :</p>
+      <div class="token-remaining" id="remaining-tokens">-- LINK</div>
+    </section>
+
+    <!-- Historique -->
+    <section class="card card-history">
+      <div class="card-head">
+        <h2>Historique</h2>
+        <button class="btn-icon danger" id="btn-reset" title="Réinitialiser">🗑️</button>
+      </div>
+      <ul class="history-list" id="history-list">
+        <li class="history-empty">Aucune transaction pour l'instant.</li>
+      </ul>
+    </section>
+
+    <!-- Simulateur d'achat avec capital réel -->
+    <section class="card card-buy-simulator">
+      <div class="card-head">
+        <h2>Simulateur d'achat</h2>
+      </div>
+
+      <div class="buy-sim-layout">
+        <!-- Capital actuel -->
+        <div class="buy-sim-info">
+          <div class="info-box">
+            <span>Capital disponible</span>
+            <b id="sim-capital-current">$--</b>
+          </div>
+          <div class="info-box">
+            <span>Prix LINK (live)</span>
+            <b id="sim-price-live">$--</b>
+          </div>
+        </div>
+
+        <!-- Saisie achat -->
+        <div class="buy-sim-input">
+          <label for="buy-sim-amount">Montant à investir ($)</label>
+          <input type="number" step="0.01" min="0.01" id="buy-sim-amount" placeholder="Ex : 500">
+
+          <label for="buy-sim-price">Prix d'achat ($) — modifiable si le prix live ne charge pas</label>
+          <input type="number" step="0.0001" min="0.0001" id="buy-sim-price" placeholder="Ex : 7.85">
+
+          <button class="btn blue-btn" id="btn-simulate-buy">🛒 Simuler cet achat</button>
+        </div>
+
+        <!-- Résultat simulation -->
+        <div id="buy-sim-result" class="buy-sim-result hidden">
+          <div class="result-grid">
+            <div class="result-item">
+              <span>LINK que tu obtiendrais</span>
+              <b id="sim-tokens-acquired">-- LINK</b>
+            </div>
+            <div class="result-item highlight-up">
+              <span>Solde restant après achat</span>
+              <b id="sim-balance-after">$--</b>
+            </div>
+          </div>
+          <button class="btn green-btn" id="btn-save-sim-buy" style="width:100%; margin-top: 12px;">
+            ✅ Enregistrer cet achat (déduit de mon capital)
+          </button>
+        </div>
+      </div>
+
+      <!-- Portefeuille réel (achats confirmés uniquement) -->
+      <div class="portfolio-summary" id="portfolio-summary">
+        <h3>Mon portefeuille réel</h3>
+        <div class="portfolio-grid">
+          <div class="portfolio-stat">
+            <span>LINK détenus</span>
+            <b id="portfolio-tokens">-- LINK</b>
+          </div>
+          <div class="portfolio-stat">
+            <span>Investi</span>
+            <b id="portfolio-invested">$--</b>
+          </div>
+          <div class="portfolio-stat highlight">
+            <span>Prix moyen réel</span>
+            <b id="portfolio-avg-price">$--</b>
+          </div>
+          <div class="portfolio-stat" id="portfolio-pnl-box">
+            <span>PNL latent</span>
+            <b id="portfolio-pnl">$--</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simulateur DCA -->
+    <section class="card card-dca">
+      <div class="card-head">
+        <h2>Simulateur DCA</h2>
+        <button class="btn-icon danger" id="btn-dca-reset" title="Réinitialiser la simulation">🗑️</button>
+      </div>
+
+      <div class="dca-layout">
+        <!-- Saisie DCA -->
+        <div class="dca-form">
+          <div class="dca-mode-switch">
+            <button class="mode-btn active" data-mode="usd" title="Mode USD">
+              💵 Montant / Prix
+            </button>
+            <button class="mode-btn" data-mode="link" title="Mode LINK">
+              🔗 Quantité LINK / Prix
+            </button>
+          </div>
+
+          <!-- Mode USD -->
+          <div class="dca-mode" id="mode-usd">
+            <label for="dca-amount">Montant investi ($)</label>
+            <input type="number" step="0.01" min="0.01" id="dca-amount" placeholder="Ex : 200">
+
+            <label for="dca-price">Prix d'achat ($)</label>
+            <input type="number" step="0.0001" min="0.0001" id="dca-price" placeholder="Ex : 6.85">
+
+            <div class="dca-preview" id="dca-tokens-preview">≈ -- LINK</div>
+
+            <button class="btn blue-btn" id="btn-dca-add">➕ Ajouter cet achat</button>
+          </div>
+
+          <!-- Mode LINK -->
+          <div class="dca-mode hidden" id="mode-link">
+            <label for="dca-tokens">Quantité LINK à acheter</label>
+            <input type="number" step="0.01" min="0.01" id="dca-tokens" placeholder="Ex : 30.5">
+
+            <label for="dca-price-link">Prix d'achat ($)</label>
+            <input type="number" step="0.0001" min="0.0001" id="dca-price-link" placeholder="Ex : 6.85">
+
+            <div class="dca-preview" id="dca-amount-preview">≈ $--</div>
+
+            <button class="btn blue-btn" id="btn-dca-add-link">➕ Ajouter cet achat</button>
+          </div>
+        </div>
+
+        <!-- Stats synthétiques -->
+        <div class="dca-stats">
+          <div class="dca-stat">
+            <span>Total investi</span>
+            <b id="dca-total-invested">$--</b>
+          </div>
+          <div class="dca-stat">
+            <span>Total LINK acquis</span>
+            <b id="dca-total-tokens">-- LINK</b>
+          </div>
+          <div class="dca-stat highlight">
+            <span>Prix de revient moyen (PRU)</span>
+            <b id="dca-avg-price">$--</b>
+          </div>
+          <div class="dca-stat">
+            <span>Nombre d'achats</span>
+            <b id="dca-count">0</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Liste des achats -->
+      <ul class="dca-entries" id="dca-entries-list">
+        <li class="history-empty">Aucun achat simulé pour l'instant.</li>
+      </ul>
+
+      <!-- GRAPHIQUE DCA -->
+      <div class="dca-chart-section">
+        <h3>PRU vs Prix du marché (24h)</h3>
+        <canvas id="dca-chart" width="400" height="200" style="max-width: 100%;"></canvas>
+      </div>
+
+      <!-- STATS AVANCÉES -->
+      <div class="dca-advanced-stats">
+        <h3>Stats avancées de la simulation</h3>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span>Gain moyen par achat</span>
+            <b id="stat-avg-gain">$--</b>
+          </div>
+          <div class="stat-box">
+            <span>Écart-type des prix</span>
+            <b id="stat-price-std">$--</b>
+          </div>
+          <div class="stat-box">
+            <span>Volatilité 24h</span>
+            <b id="stat-volatility">--%</b>
+          </div>
+          <div class="stat-box highlight">
+            <span>Ratio Sharpe</span>
+            <b id="stat-sharpe">--</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIMULATION DE REVENTE -->
+      <div class="dca-pnl">
+        <h3>Simulation de revente</h3>
+
+        <div class="pnl-tabs">
+          <!-- Tab 1 : Prix cible classique -->
+          <div class="pnl-tab active" id="tab-target">
+            <h4>Par prix cible</h4>
+            <div class="quick-chips" id="dca-target-chips">
+              <button type="button" class="chip" data-mode="live">Prix actuel</button>
+              <button type="button" class="chip" data-pct="25">PRU +25%</button>
+              <button type="button" class="chip" data-pct="50">PRU +50%</button>
+              <button type="button" class="chip" data-pct="100">PRU x2</button>
+            </div>
+
+            <div class="input-row">
+              <input type="number" step="0.01" min="0.01" id="dca-target-price" placeholder="Prix de revente cible ($)">
+              <button class="btn green-btn" id="btn-dca-target">🎯 Simuler</button>
+            </div>
+
+            <div class="pnl-grid">
+              <div class="pnl-box" id="pnl-target-box">
+                <span>Au prix cible</span>
+                <b id="pnl-target-usd">--</b>
+                <span class="pnl-pct" id="pnl-target-pct">--%</span>
+              </div>
+              <div class="pnl-box" id="pnl-live-box">
+                <span>Au prix actuel (latent)</span>
+                <b id="pnl-live-usd">--</b>
+                <span class="pnl-pct" id="pnl-live-pct">--%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2 : Calcul inverse -->
+          <div class="pnl-tab" id="tab-inverse">
+            <h4>Calcul inverse — Objectif de gain</h4>
+            <p class="muted" style="margin-bottom: 12px;">Saisis ton objectif de gain ($), on te dit à quel prix tu dois vendre</p>
+            
+            <div class="input-row">
+              <input type="number" step="1" min="1" id="inverse-gain" placeholder="Gain souhaité en $ (ex: 1000)">
+              <button class="btn blue-btn" id="btn-inverse-calc">⚡ Calculer</button>
+            </div>
+
+            <div id="inverse-result" class="inverse-result hidden">
+              <div class="result-box">
+                <span>Prix de revente nécessaire</span>
+                <b id="inverse-target-price">$--</b>
+              </div>
+              <div class="result-box">
+                <span>Valeur totale au prix cible</span>
+                <b id="inverse-target-value">$--</b>
+              </div>
+              <button class="btn green-btn" id="btn-apply-inverse" style="width: 100%; margin-top: 12px;">Appliquer ce prix</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <span>LINK Tracker — mis à jour automatiquement toutes les 30s</span>
+  </footer>
+
+</div>
+
+<div class="toast-container" id="toast-container"></div>
+
+<script id="initial-data" type="application/json">{{ initial | tojson }}</script>
+<script src="/static/script.js"></script>
+</body>
+</html>
