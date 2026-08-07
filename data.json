@@ -1,6 +1,6 @@
 {
     "goal_tokens": 1500.0,
-    "target_price": 7.8,
+    "target_price": 7.5,
     "balance": 9296.0,
     "history": [
         {
@@ -126,6 +126,26 @@
         {
             "price": 8.09,
             "timestamp": "2026-08-06T11:22:14"
+        },
+        {
+            "price": 8.1,
+            "timestamp": "2026-08-06T11:22:45"
+        },
+        {
+            "price": 8.23,
+            "timestamp": "2026-08-07T10:31:47"
+        },
+        {
+            "price": 8.22,
+            "timestamp": "2026-08-07T10:32:43"
+        },
+        {
+            "price": 8.22,
+            "timestamp": "2026-08-07T10:33:54"
+        },
+        {
+            "price": 8.22,
+            "timestamp": "2026-08-07T10:34:28"
         }
     ],
     "dca_entries": [],
