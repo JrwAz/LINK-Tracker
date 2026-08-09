@@ -316,15 +316,19 @@
         {
             "price": 8.3,
             "timestamp": "2026-08-09T15:46:21"
+        },
+        {
+            "price": 8.3,
+            "timestamp": "2026-08-09T15:46:51"
         }
     ],
     "dca_entries": [
         {
-            "amount": 80000.0,
-            "price": 8.3,
-            "tokens": 9638.554217,
-            "timestamp": "2026-08-09T14:50:37"
+            "amount": 11300.0,
+            "price": 7.52,
+            "tokens": 1502.659574,
+            "timestamp": "2026-08-09T15:47:03"
         }
     ],
-    "dca_target_price": 9.5
+    "dca_target_price": 18.0
 }
