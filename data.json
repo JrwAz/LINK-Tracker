@@ -1,8 +1,14 @@
 {
     "goal_tokens": 1500.0,
     "target_price": 7.52,
-    "balance": 9296.0,
+    "balance": 11300.0,
     "history": [
+        {
+            "type": "deposit",
+            "amount": 2004.0,
+            "balance_after": 11300.0,
+            "timestamp": "2026-08-09T15:46:11"
+        },
         {
             "type": "deposit",
             "amount": 1980.0,
@@ -274,15 +280,51 @@
         {
             "price": 8.28,
             "timestamp": "2026-08-09T13:27:18"
+        },
+        {
+            "price": 8.3,
+            "timestamp": "2026-08-09T14:46:17"
+        },
+        {
+            "price": 8.3,
+            "timestamp": "2026-08-09T14:47:43"
+        },
+        {
+            "price": 8.3,
+            "timestamp": "2026-08-09T14:48:25"
+        },
+        {
+            "price": 8.3,
+            "timestamp": "2026-08-09T14:49:41"
+        },
+        {
+            "price": 8.3,
+            "timestamp": "2026-08-09T14:50:32"
+        },
+        {
+            "price": 8.33,
+            "timestamp": "2026-08-09T15:19:37"
+        },
+        {
+            "price": 8.3,
+            "timestamp": "2026-08-09T15:44:49"
+        },
+        {
+            "price": 8.3,
+            "timestamp": "2026-08-09T15:45:42"
+        },
+        {
+            "price": 8.3,
+            "timestamp": "2026-08-09T15:46:21"
         }
     ],
     "dca_entries": [
         {
-            "amount": 9300.0,
-            "price": 6.5,
-            "tokens": 1430.769231,
-            "timestamp": "2026-08-07T13:25:41"
+            "amount": 80000.0,
+            "price": 8.3,
+            "tokens": 9638.554217,
+            "timestamp": "2026-08-09T14:50:37"
         }
     ],
-    "dca_target_price": 26.0
+    "dca_target_price": 9.5
 }
