@@ -1,431 +1,184 @@
 {
-    "goal_tokens": 1500.0,
-    "target_price": 8.6,
-    "balance": 11300.0,
+    "goal_tokens": 505.1,
+    "target_price": 9.9,
+    "balance": 0.0,
     "history": [
         {
+            "type": "buy",
+            "amount": 11300.0,
+            "price": 11.3,
+            "tokens": 1000.0,
+            "balance_after": 0.0,
+            "timestamp": "2026-08-21T15:03:12"
+        },
+        {
             "type": "deposit",
-            "amount": 2004.0,
+            "amount": 11300.0,
             "balance_after": 11300.0,
-            "timestamp": "2026-08-15T21:32:01"
-        },
-        {
-            "type": "deposit",
-            "amount": 1980.0,
-            "balance_after": 9296.0,
-            "timestamp": "2026-08-05T14:18:17"
-        },
-        {
-            "type": "deposit",
-            "amount": 1986.0,
-            "balance_after": 7316.0,
-            "timestamp": "2026-08-05T14:18:12"
-        },
-        {
-            "type": "deposit",
-            "amount": 1990.0,
-            "balance_after": 5330.0,
-            "timestamp": "2026-08-05T14:17:56"
-        },
-        {
-            "type": "deposit",
-            "amount": 2000.0,
-            "balance_after": 3340.0,
-            "timestamp": "2026-08-05T13:38:16"
-        },
-        {
-            "type": "deposit",
-            "amount": 1340.0,
-            "balance_after": 1340.0,
-            "timestamp": "2026-08-05T13:38:13"
+            "timestamp": "2026-08-21T08:37:51"
         }
     ],
     "price_history": [
         {
-            "price": 8.14,
-            "timestamp": "2026-08-05T13:05:20"
+            "price": 10.69,
+            "timestamp": "2026-08-20T17:07:58"
         },
         {
-            "price": 8.19,
-            "timestamp": "2026-08-05T13:35:15"
+            "price": 10.69,
+            "timestamp": "2026-08-20T17:08:27"
         },
         {
-            "price": 8.19,
-            "timestamp": "2026-08-05T13:38:09"
+            "price": 10.7,
+            "timestamp": "2026-08-20T17:13:49"
         },
         {
-            "price": 8.18,
-            "timestamp": "2026-08-05T13:49:50"
+            "price": 10.7,
+            "timestamp": "2026-08-20T17:14:19"
         },
         {
-            "price": 8.15,
-            "timestamp": "2026-08-05T14:17:52"
+            "price": 10.68,
+            "timestamp": "2026-08-20T17:15:06"
         },
         {
-            "price": 8.15,
-            "timestamp": "2026-08-05T14:18:44"
+            "price": 10.67,
+            "timestamp": "2026-08-20T17:15:44"
         },
         {
-            "price": 8.14,
-            "timestamp": "2026-08-05T14:19:09"
+            "price": 11.62,
+            "timestamp": "2026-08-21T08:37:24"
         },
         {
-            "price": 8.14,
-            "timestamp": "2026-08-05T14:19:57"
+            "price": 11.62,
+            "timestamp": "2026-08-21T08:37:56"
         },
         {
-            "price": 8.14,
-            "timestamp": "2026-08-05T14:20:31"
+            "price": 11.39,
+            "timestamp": "2026-08-21T11:43:20"
         },
         {
-            "price": 8.15,
-            "timestamp": "2026-08-05T14:21:03"
+            "price": 11.4,
+            "timestamp": "2026-08-21T11:52:14"
         },
         {
-            "price": 8.14,
-            "timestamp": "2026-08-05T14:23:19"
+            "price": 11.4,
+            "timestamp": "2026-08-21T15:02:52"
         },
         {
-            "price": 8.12,
-            "timestamp": "2026-08-05T14:44:15"
+            "price": 11.4,
+            "timestamp": "2026-08-21T15:03:23"
         },
         {
-            "price": 8.12,
-            "timestamp": "2026-08-05T14:45:46"
+            "price": 11.39,
+            "timestamp": "2026-08-21T15:04:04"
         },
         {
-            "price": 8.17,
-            "timestamp": "2026-08-05T16:06:52"
+            "price": 11.39,
+            "timestamp": "2026-08-21T15:04:45"
         },
         {
-            "price": 8.17,
-            "timestamp": "2026-08-05T16:07:22"
+            "price": 11.36,
+            "timestamp": "2026-08-21T15:05:24"
         },
         {
-            "price": 8.17,
-            "timestamp": "2026-08-05T16:09:27"
+            "price": 11.35,
+            "timestamp": "2026-08-21T15:06:01"
         },
         {
-            "price": 8.17,
-            "timestamp": "2026-08-05T16:10:00"
+            "price": 11.35,
+            "timestamp": "2026-08-21T15:06:33"
         },
         {
-            "price": 8.17,
-            "timestamp": "2026-08-05T16:10:56"
+            "price": 11.34,
+            "timestamp": "2026-08-21T15:07:09"
         },
         {
-            "price": 8.09,
-            "timestamp": "2026-08-06T11:21:43"
+            "price": 11.34,
+            "timestamp": "2026-08-21T15:07:39"
         },
         {
-            "price": 8.09,
-            "timestamp": "2026-08-06T11:22:14"
-        },
-        {
-            "price": 8.1,
-            "timestamp": "2026-08-06T11:22:45"
-        },
-        {
-            "price": 8.23,
-            "timestamp": "2026-08-07T10:31:47"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T10:32:43"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T10:33:54"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T10:34:28"
-        },
-        {
-            "price": 8.21,
-            "timestamp": "2026-08-07T11:05:35"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T11:31:35"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T11:32:14"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T11:32:54"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T11:34:17"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T11:37:16"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T11:39:13"
-        },
-        {
-            "price": 8.21,
-            "timestamp": "2026-08-07T13:01:34"
-        },
-        {
-            "price": 8.21,
-            "timestamp": "2026-08-07T13:02:06"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T13:04:45"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T13:07:12"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T13:07:49"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T13:08:39"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T13:09:11"
-        },
-        {
-            "price": 8.22,
-            "timestamp": "2026-08-07T13:09:42"
-        },
-        {
-            "price": 8.26,
-            "timestamp": "2026-08-07T13:22:05"
-        },
-        {
-            "price": 8.25,
-            "timestamp": "2026-08-07T13:22:42"
-        },
-        {
-            "price": 8.25,
-            "timestamp": "2026-08-07T13:23:11"
-        },
-        {
-            "price": 8.26,
-            "timestamp": "2026-08-07T13:24:24"
-        },
-        {
-            "price": 8.26,
-            "timestamp": "2026-08-07T13:24:54"
-        },
-        {
-            "price": 8.25,
-            "timestamp": "2026-08-07T13:25:37"
-        },
-        {
-            "price": 8.25,
-            "timestamp": "2026-08-07T13:26:11"
-        },
-        {
-            "price": 8.33,
-            "timestamp": "2026-08-08T18:01:21"
-        },
-        {
-            "price": 8.32,
-            "timestamp": "2026-08-08T19:32:47"
-        },
-        {
-            "price": 8.34,
-            "timestamp": "2026-08-08T21:22:52"
-        },
-        {
-            "price": 8.33,
-            "timestamp": "2026-08-08T23:39:01"
-        },
-        {
-            "price": 8.28,
-            "timestamp": "2026-08-09T13:22:20"
-        },
-        {
-            "price": 8.28,
-            "timestamp": "2026-08-09T13:22:52"
-        },
-        {
-            "price": 8.28,
-            "timestamp": "2026-08-09T13:23:22"
-        },
-        {
-            "price": 8.28,
-            "timestamp": "2026-08-09T13:23:53"
-        },
-        {
-            "price": 8.29,
-            "timestamp": "2026-08-09T13:25:50"
-        },
-        {
-            "price": 8.28,
-            "timestamp": "2026-08-09T13:27:18"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-09T14:46:17"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-09T14:47:43"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-09T14:48:25"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-09T14:49:41"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-09T14:50:32"
-        },
-        {
-            "price": 8.33,
-            "timestamp": "2026-08-09T15:19:37"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-09T15:44:49"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-09T15:45:42"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-09T15:46:21"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-09T15:46:51"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-09T16:04:51"
-        },
-        {
-            "price": 8.34,
-            "timestamp": "2026-08-09T23:30:08"
-        },
-        {
-            "price": 8.34,
-            "timestamp": "2026-08-09T23:30:43"
-        },
-        {
-            "price": 8.34,
-            "timestamp": "2026-08-09T23:31:15"
-        },
-        {
-            "price": 8.34,
-            "timestamp": "2026-08-09T23:31:46"
-        },
-        {
-            "price": 8.34,
-            "timestamp": "2026-08-09T23:32:17"
-        },
-        {
-            "price": 8.26,
-            "timestamp": "2026-08-10T00:00:53"
-        },
-        {
-            "price": 8.26,
-            "timestamp": "2026-08-10T00:01:25"
-        },
-        {
-            "price": 8.26,
-            "timestamp": "2026-08-10T00:01:55"
-        },
-        {
-            "price": 8.25,
-            "timestamp": "2026-08-10T00:02:41"
-        },
-        {
-            "price": 8.25,
-            "timestamp": "2026-08-10T00:03:21"
-        },
-        {
-            "price": 8.29,
-            "timestamp": "2026-08-10T21:57:42"
-        },
-        {
-            "price": 8.29,
-            "timestamp": "2026-08-10T21:58:13"
-        },
-        {
-            "price": 8.29,
-            "timestamp": "2026-08-10T23:51:08"
-        },
-        {
-            "price": 8.29,
-            "timestamp": "2026-08-10T23:51:56"
-        },
-        {
-            "price": 8.3,
-            "timestamp": "2026-08-11T00:06:34"
-        },
-        {
-            "price": 8.66,
-            "timestamp": "2026-08-11T13:08:20"
-        },
-        {
-            "price": 8.66,
-            "timestamp": "2026-08-11T13:08:53"
-        },
-        {
-            "price": 8.67,
-            "timestamp": "2026-08-11T13:09:23"
-        },
-        {
-            "price": 8.67,
-            "timestamp": "2026-08-11T13:25:06"
-        },
-        {
-            "price": 8.55,
-            "timestamp": "2026-08-11T19:46:10"
-        },
-        {
-            "price": 8.56,
-            "timestamp": "2026-08-11T20:41:13"
-        },
-        {
-            "price": 8.68,
-            "timestamp": "2026-08-11T21:51:32"
-        },
-        {
-            "price": 9.56,
-            "timestamp": "2026-08-15T21:31:11"
-        },
-        {
-            "price": 9.56,
-            "timestamp": "2026-08-15T21:31:43"
-        },
-        {
-            "price": 9.56,
-            "timestamp": "2026-08-15T21:32:35"
-        },
-        {
-            "price": 9.56,
-            "timestamp": "2026-08-15T21:33:15"
-        },
-        {
-            "price": 9.56,
-            "timestamp": "2026-08-15T21:33:52"
-        },
-        {
-            "price": 9.55,
-            "timestamp": "2026-08-15T22:06:12"
+            "price": 11.36,
+            "timestamp": "2026-08-21T15:08:27"
         }
     ],
-    "dca_entries": [],
-    "dca_target_price": 7.5
+    "dca_entries": [
+        {
+            "amount": 11300.0,
+            "price": 11.3,
+            "tokens": 1000.0,
+            "timestamp": "2026-08-21T15:04:23"
+        },
+        {
+            "amount": 355.0,
+            "price": 11.1,
+            "tokens": 31.981982,
+            "timestamp": "2026-08-21T15:06:01"
+        },
+        {
+            "amount": 366.0,
+            "price": 10.9,
+            "tokens": 33.577982,
+            "timestamp": "2026-08-21T15:06:27"
+        },
+        {
+            "amount": 377.0,
+            "price": 10.7,
+            "tokens": 35.233645,
+            "timestamp": "2026-08-21T15:06:33"
+        },
+        {
+            "amount": 389.0,
+            "price": 10.5,
+            "tokens": 37.047619,
+            "timestamp": "2026-08-21T15:07:00"
+        },
+        {
+            "amount": 400.0,
+            "price": 10.1,
+            "tokens": 39.60396,
+            "timestamp": "2026-08-21T15:07:09"
+        },
+        {
+            "amount": 422.0,
+            "price": 9.9,
+            "tokens": 42.626263,
+            "timestamp": "2026-08-21T15:07:14"
+        },
+        {
+            "amount": 434.0,
+            "price": 9.7,
+            "tokens": 44.742268,
+            "timestamp": "2026-08-21T15:07:20"
+        },
+        {
+            "amount": 445.0,
+            "price": 9.5,
+            "tokens": 46.842105,
+            "timestamp": "2026-08-21T15:07:29"
+        },
+        {
+            "amount": 456.0,
+            "price": 9.3,
+            "tokens": 49.032258,
+            "timestamp": "2026-08-21T15:07:39"
+        },
+        {
+            "amount": 467.0,
+            "price": 9.1,
+            "tokens": 51.318681,
+            "timestamp": "2026-08-21T15:07:45"
+        },
+        {
+            "amount": 400.0,
+            "price": 10.3,
+            "tokens": 38.834951,
+            "timestamp": "2026-08-21T15:08:06"
+        },
+        {
+            "amount": 478.0,
+            "price": 9.0,
+            "tokens": 53.111111,
+            "timestamp": "2026-08-21T15:08:40"
+        }
+    ],
+    "dca_target_price": 40.0
 }
