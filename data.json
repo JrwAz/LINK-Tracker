@@ -1,8 +1,14 @@
 {
     "goal_tokens": 505.1,
     "target_price": 9.9,
-    "balance": 0.0,
+    "balance": 5000.0,
     "history": [
+        {
+            "type": "deposit",
+            "amount": 5000.0,
+            "balance_after": 5000.0,
+            "timestamp": "2026-08-21T23:45:35"
+        },
         {
             "type": "buy",
             "amount": 11300.0,
@@ -98,6 +104,54 @@
         {
             "price": 11.36,
             "timestamp": "2026-08-21T15:08:27"
+        },
+        {
+            "price": 11.36,
+            "timestamp": "2026-08-21T15:09:39"
+        },
+        {
+            "price": 11.36,
+            "timestamp": "2026-08-21T15:10:15"
+        },
+        {
+            "price": 12.23,
+            "timestamp": "2026-08-21T23:44:21"
+        },
+        {
+            "price": 12.25,
+            "timestamp": "2026-08-21T23:44:56"
+        },
+        {
+            "price": 12.25,
+            "timestamp": "2026-08-21T23:45:35"
+        },
+        {
+            "price": 12.25,
+            "timestamp": "2026-08-21T23:46:09"
+        },
+        {
+            "price": 12.2,
+            "timestamp": "2026-08-21T23:59:37"
+        },
+        {
+            "price": 12.18,
+            "timestamp": "2026-08-22T00:00:37"
+        },
+        {
+            "price": 12.18,
+            "timestamp": "2026-08-22T00:01:38"
+        },
+        {
+            "price": 12.18,
+            "timestamp": "2026-08-22T00:05:08"
+        },
+        {
+            "price": 12.18,
+            "timestamp": "2026-08-22T00:05:44"
+        },
+        {
+            "price": 12.15,
+            "timestamp": "2026-08-22T00:11:59"
         }
     ],
     "dca_entries": [
@@ -108,76 +162,10 @@
             "timestamp": "2026-08-21T15:04:23"
         },
         {
-            "amount": 355.0,
-            "price": 11.1,
-            "tokens": 31.981982,
-            "timestamp": "2026-08-21T15:06:01"
-        },
-        {
-            "amount": 366.0,
-            "price": 10.9,
-            "tokens": 33.577982,
-            "timestamp": "2026-08-21T15:06:27"
-        },
-        {
-            "amount": 377.0,
-            "price": 10.7,
-            "tokens": 35.233645,
-            "timestamp": "2026-08-21T15:06:33"
-        },
-        {
-            "amount": 389.0,
-            "price": 10.5,
-            "tokens": 37.047619,
-            "timestamp": "2026-08-21T15:07:00"
-        },
-        {
-            "amount": 400.0,
-            "price": 10.1,
-            "tokens": 39.60396,
-            "timestamp": "2026-08-21T15:07:09"
-        },
-        {
-            "amount": 422.0,
-            "price": 9.9,
-            "tokens": 42.626263,
-            "timestamp": "2026-08-21T15:07:14"
-        },
-        {
-            "amount": 434.0,
-            "price": 9.7,
-            "tokens": 44.742268,
-            "timestamp": "2026-08-21T15:07:20"
-        },
-        {
-            "amount": 445.0,
-            "price": 9.5,
-            "tokens": 46.842105,
-            "timestamp": "2026-08-21T15:07:29"
-        },
-        {
-            "amount": 456.0,
-            "price": 9.3,
-            "tokens": 49.032258,
-            "timestamp": "2026-08-21T15:07:39"
-        },
-        {
-            "amount": 467.0,
-            "price": 9.1,
-            "tokens": 51.318681,
-            "timestamp": "2026-08-21T15:07:45"
-        },
-        {
-            "amount": 400.0,
-            "price": 10.3,
-            "tokens": 38.834951,
-            "timestamp": "2026-08-21T15:08:06"
-        },
-        {
-            "amount": 478.0,
+            "amount": 5000.0,
             "price": 9.0,
-            "tokens": 53.111111,
-            "timestamp": "2026-08-21T15:08:40"
+            "tokens": 555.555556,
+            "timestamp": "2026-08-22T00:05:27"
         }
     ],
     "dca_target_price": 40.0
